@@ -51,7 +51,6 @@ function Player(
             posY = value;
             stylePlayer.top = value;
         }
-
     }
         
     /**
@@ -60,7 +59,6 @@ function Player(
     function incrementScore() {
         score += 10;
         idScore.innerHTML = "<h4>" + score + "</h4>";
-        
     }
     
     /**
@@ -79,7 +77,11 @@ function Player(
     setPosY(posY);
 
     return {
-        //Inicio Encapsulando as variáveis de entrada
+
+/**
+ * -----------------------------------------------
+ * Inicio - Encapsulando das variáveis de entrada |
+ */
         getName: () => {
             return name;
         },
@@ -103,7 +105,11 @@ function Player(
         getPosY()  {
             return posY;
         },
-        //Fim Encapsulando as variáveis de entrada
+
+/**
+ *  Fim - Encapsulando das variáveis de entrada    |
+ *  -----------------------------------------------
+ */
         
         incrementScore,
 
@@ -265,16 +271,13 @@ function FruitModule(timeP) {
  * mensagem avisando quem venceu!
  */
 function verifyPoints(player, fruit) {
-
     if (player.getPosX() === fruit.getPosX() && player.getPosY() === fruit.getPosY()) {
         //increment score
         player.incrementScore();
         clearTimeout(fruit.timeOut);
         fruit.startFruit();
-
         if (player.getScore() === 100) {
             alert("Vencedor: " + player.getName());
-
             player2.resetScore();
             player1.resetScore();
         }
