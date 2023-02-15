@@ -114,7 +114,8 @@ function Player(
         setPosY,
         
         /**
-         * Incrementa 10px na posição X
+         * Incrementa 10px na posição X e se ele sair pra fora da tela
+         * força a travessia do mapa
          */
         moveLeft: () => {
             if (posX < 20) {
@@ -124,7 +125,8 @@ function Player(
         },
         
         /**
-         * Decrementa 10px na posição X
+         * Decrementa 10px na posição X e se ele sair pra fora da tela
+         * força a travessia do mapa
          */
         moveRight: () => {
             if (posX > 590) {
@@ -134,7 +136,8 @@ function Player(
         },
         
         /**
-         * Incrementa 10px na posição Y
+         * Incrementa 10px na posição Y e se ele sair pra fora da tela
+         * força a travessia do mapa
          */
         moveUp: () => {
             if (posY < 20) {
@@ -144,7 +147,8 @@ function Player(
         },
         
         /**
-         * Decrementa 10px na posição Y
+         * Decrementa 10px na posição Y e se ele sair pra fora da tela
+         * força a travessia do mapa
          */
         moveDown: () => {
             if (posY > 590) {
