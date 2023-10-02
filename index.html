@@ -1,7 +1,9 @@
 <!-- <script src="Player.js" async></script>
 <script src="ControllModule.js" async></script> -->
 <script src="index.js" async></script>
-
+<script>
+    
+</script>
 <style>
     body {
         background: rgb(255, 247, 247);
@@ -83,26 +85,29 @@
 
     #how-to-play {
 
-        display: none;
-
-        color: #666;
+        color: #333;
 
         background:#fff;
         
         z-index: 10;
 
-        width: 50%;
+        width: 90%;
 
-        left: 45%;
-        top: 25%;
+        transition: all 500ms;
 
-        position: absolute;
+        margin-left: 100%;
+        margin-top: 2.5%;
+
+
+        position: fixed;
 
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         
         padding: 2%;
 
         border: solid 1px #eee;
+
+        box-shadow:  0 0 1em rgb(139, 135, 135);
     }
 
     #btn {
@@ -169,10 +174,21 @@
 
         </div>
         <br/>
-        <button id="btn" onclick="readDoc()">COMO JOGAR</button>
+        <button id="btn" onclick="openMenu()">COMO JOGAR</button>
     </div>
 
     <div id="how-to-play">
+        <h1>JOGO DA FRUTINHA</h1><br />
+        <h2>OBJETIVO</h2>
+        <h3> 1 - ATINGIR 100 PONTOS COLETANDO FRUTINHAS PELO MAPA, SENDO 10 PONTOS CADA.</h3><br />
+        <h2>CORES</h2>
+        <h3>PLAYER 1 - COR PRETA;</h3>
+        <h3>PLAYER 2 - COR CINZA;</h3>
+        <h3>FRUTINHA - COR VERMELHA;</h3><br />
+        <h2>CONTROLES</h2>
+        <h3>1 TECLAS DE MOVIMENTAÇÃO DO PLAYER 1: 'cima', 'baixo', 'esquerda', 'direita'.</h3>
+        <h3>2 TECLAS DE MOVIMENTAÇÃO DO PLAYER 2: 'W', 'A', 'S', 'D'.</h3> <br/>
+        <button id="btn" onclick="closeMenu()">Fechar</button>
     </div>
 </body>
 </html>

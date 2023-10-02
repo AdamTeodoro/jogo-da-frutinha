@@ -210,7 +210,6 @@ function Player(
  */
 function FruitModule(timeP) {
     let time = timeP;
-
     let styleFruit = document.getElementById('fruit').style;
     let posX = GameMathModule().generateRandomPosition();
     let posY = GameMathModule().generateRandomPosition();
@@ -223,7 +222,6 @@ function FruitModule(timeP) {
     function startFruit() {
         setPosX(GameMathModule().generateRandomPosition());
         setPosY(GameMathModule().generateRandomPosition());
-
         clearTimeout(timeOut);
         timeOut = setTimeout(() => {
             startFruit();
@@ -284,31 +282,16 @@ function verifyPoints(player, fruit) {
     }
 }
 
-function readDoc() {
-    //pegando elemento
+function openMenu() {
+    //pegando elementos
     const howToPlayElement = document.getElementById('how-to-play');
-    //inserindo html e contexto ao elemento
-    howToPlayElement.innerHTML = `
-        <h1>JOGO DA FRUTINHA</h1>\n
+    howToPlayElement.style.display = 'block';
+    howToPlayElement.style.marginLeft = '3%';
+}
 
-        <h2>OBJETIVO\n</h2>
-        <h3> 1 - ATINGIR 100 PONTOS COLETANDO FRUTINHAS PELO MAPA, SENDO 10 PONTOS CADA.</h3>
-        \n
-        \n
-        <h2>CORES\n</h2>
-        <h3>PLAYER 1 - COR PRETA;\n</h3>
-        <h3>PLAYER 2 - COR CINZA;\n</h3>
-        <h3>FRUTINHA - COR VERMELHA;</h3>
-        \n
-        \n
-        <h2>CONTROLES\n</h2>
-        <h3>1 TECLAS DE MOVIMENTAÇÃO DO PLAYER 1: 'cima', 'baixo', 'esquerda', 'direita'.\n</h3>
-        <h3>2 TECLAS DE MOVIMENTAÇÃO DO PLAYER 2: 'W', 'A', 'S', 'D'.\n</h3>
-    `;
-    howToPlayElement.style.display = "block";
-    //esconder botão
-    const btnElement = document.getElementById("btn");
-    btnElement.style.display = "none";
+function closeMenu() {
+    const howToPlayElement = document.getElementById('how-to-play');
+    howToPlayElement.style.marginLeft = '100%';
 }
 
 const player2 = new Player(
