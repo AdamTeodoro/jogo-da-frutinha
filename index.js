@@ -4,7 +4,7 @@
  */
 function GameMathModule() {
     return {
-        generateRandomPosition: () => ((Math.floor(Math.random() * 60) * 10) + 10),
+        generateRandomPosition: () => ((Math.floor(Math.random() * 50) * 10) + 10),
     }
 }
 
@@ -125,7 +125,7 @@ function Player(
          */
         moveLeft: () => {
             if (posX < 20) {
-                return setPosX(600);
+                return setPosX(500);
             }
             setPosX(posX -= 10);
         },
@@ -135,7 +135,7 @@ function Player(
          * força a travessia do mapa
          */
         moveRight: () => {
-            if (posX > 590) {
+            if (posX > 490) {
                 return setPosX(10);
             }
             setPosX(posX += 10);
@@ -147,7 +147,7 @@ function Player(
          */
         moveUp: () => {
             if (posY < 20) {
-                return setPosY(600);
+                return setPosY(500);
             }
             setPosY(posY -= 10);
         },
@@ -157,7 +157,7 @@ function Player(
          * força a travessia do mapa
          */
         moveDown: () => {
-            if (posY > 590) {
+            if (posY > 490) {
                 return setPosY(10);
             }
             setPosY(posY += 10);
