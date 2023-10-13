@@ -78,10 +78,10 @@ function Player(
 
     return {
 
-/**
- * -----------------------------------------------
- * Inicio - Encapsulando das variáveis de entrada
- */
+        /**
+         * -----------------------------------------------
+         * Inicio - Encapsulando das variáveis de entrada
+         */
         getName: () => {
             return name;
         },
@@ -106,11 +106,10 @@ function Player(
             return posY;
         },
 
-/**
- *  Fim - Encapsulando das variáveis de entrada    |
- *  -----------------------------------------------
- */
-        
+        /**
+         *  Fim - Encapsulando das variáveis de entrada    |
+         *  -----------------------------------------------
+         */
         incrementScore,
 
         //função para inserir a posição x e também atualizar no template
@@ -164,7 +163,6 @@ function Player(
         },
 
         resetScore
-
     }
 }
 
@@ -325,6 +323,7 @@ document.addEventListener('keyup', (event) => {
         controlP2[event.key.toLocaleLowerCase()]();
         verifyPoints(player2, fruit);
     } catch {
+        return;
     }
 });
 
@@ -336,5 +335,6 @@ document.addEventListener('keyup', (event) => {
         controlP1[event.key]();
         verifyPoints(player1, fruit);
     } catch {
+        return;
     }
 });
