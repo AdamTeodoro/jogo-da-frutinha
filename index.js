@@ -28,11 +28,10 @@ function Player(
     id,
 ) {
     let score = 0;
-
     let stylePlayer = document.getElementById('player-' + id).style;
     let idScore = document.getElementById("score-p" + id);
     idScore.innerHTML = `<h4>${score}</h4>`;
-    
+
     /**
      * Define uma posição no eixo X e também desenha o player na posição ordenada
      */
@@ -170,13 +169,15 @@ function Player(
  * Executa a função de um player quando uma tecla é pressionada.
  * 
  * @param {*} player - Classe do tipo jogador
- * @param {string} keyMoveRight - Botão que fará o player se mover para direita
- * @param {string} keyMoveLeft - Botão que fará o player se mover para esquerda
- * @param {string} keyMoveUp - Botão que fará o player se mover para cima
- * @param {string} keyMoveDown - Botão que fará o player se mover para baixo
  */
- function ControllModule(player, keyMoveRight, keyMoveLeft, keyMoveUp, keyMoveDown) {
+ function ControllModule(player, keyMap) {
     try {
+        const {
+            keyMoveRight,
+            keyMoveLeft,
+            keyMoveUp,
+            keyMoveDown,
+        } = keyMap;
         return {
             [keyMoveRight]: () => {
                 player.moveRight();
@@ -310,8 +311,20 @@ const player1 = new Player(
 
 let fruit = new FruitModule(5000);
 
-const controlP2 = ControllModule(player2, 'd', 'a', 'w', 's');
-const controlP1 = ControllModule(player1, 'ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown');
+const keyMapP1 = {
+    keyMoveLeft: 'ArrowLeft',
+    keyMoveRight: 'ArrowRight',
+    keyMoveDown: 'ArrowDown',
+    keyMoveUp: 'ArrowUp'
+};
+const keyMapP2 = {
+    keyMoveLeft: 'a',
+    keyMoveRight: 'd',
+    keyMoveDown: 's',
+    keyMoveUp: 'w'
+};
+const controlP2 = ControllModule(player2, keyMapP2);
+const controlP1 = ControllModule(player1, keyMapP1);
 
 console.log("Desenvolvido por: Adam Teodoro");
 
