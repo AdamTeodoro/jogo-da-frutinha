@@ -14,4 +14,4 @@
 ## 1 TECLAS DE MOVIMENTAÇÃO DO PLAYER 1: 'cima', 'baixo', 'esquerda', 'direita'.
 ## 2 TECLAS DE MOVIMENTAÇÃO DO PLAYER 2: 'W', 'A', 'S', 'D'.
 
-Link do jogo: https://adamteodoro.github.io/Jogo-da-frutinha.github.io/
+# Link do jogo: https://adamteodoro.github.io/jogo-da-frutinha/
